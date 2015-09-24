@@ -1,0 +1,31 @@
+Lecture 2
+----
+
+2^4 Boolean Input functions for a 2-input boolean function
+
+2^(2^n) functions for N-input boolean function
+
+
+given inputs x, y, a & b. define f(x, y, a, b) such that f delivers x when a = b and y when a != b
+
+f = ( a == b) ? x : y;
+
+f = (((a.b) + (~a.~b)).x) + (((a.~b) + (~a.b)).y)
+
+the above two function definitions are equivalent.
+
+* Implementation Goals
+** Minimize DELAY, AREA and ENERGY
+** Minimize no of gates
+** Minimize no of gate inputs (fan-in)
+** Minimize no of gates attachet to each output (fan-out)
+** Minimum propogation delay
+** Minimum chip area
+** Minimum Power Con
+
+
+* Simplification of Boolean Algebra
+** Apply Algebraic simplifications
+** generate:
+*** Sum of Products
+*** Product of Sums
