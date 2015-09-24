@@ -2,10 +2,5 @@
 #+AUTHOR: Hamish Hutchings
 #+DATE: Thursday 24 September 2015
 
-* Make a thing
-** do this other thing
-   SCHEDULED: <2015-09-25 ven.>
-* This is the main problem                                          :problem:
-DEADLINE: <2015-09-25 Fri>
-** TODO this thing please                                          :problem:
-DEADLINE: <2015-09-25 Fri>
+* Create a repository for org mode.
+DEADLINE: <2015-09-24 Thu>
