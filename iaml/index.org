@@ -1,0 +1,7 @@
+Introduction to Applied Machine Learning
+
+* Recap on Probability
+** Random Variables
+** Joint Distributions
+** Conditional Probability Distributions
+** Yay for Continuous Random Variables
