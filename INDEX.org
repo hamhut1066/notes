@@ -1,8 +1,0 @@
-#+TITLE Notes for 3rd year
-#+AUTHOR Hamish Hutchings
-
-* Notes for 3rd year
-This is my repository of notes on 3rd year.
-
-information may be inaccurate/irrelevent.
-I am not liable for getting anything wrong (or you...).
