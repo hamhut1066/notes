@@ -50,15 +50,15 @@ solution for (m1 + m2)
 ** Prime Implicant
 *** Product term obtained by combining the maximum possible number of adjacent squares.
 * NAND and NOR gates
-** both are extremely efficient
-** Are used to create other gates
-** NAND gates are generic. (as with NOR)
+ - both are extremely efficient
+ - Are used to create other gates
+ - NAND gates are generic. (as with NOR)
 * Hardware Design Language (HDL)
 eg. Verilog
 
 example of 3 bit adder
 
-#+BEGIN_SRC ruby
+#+BEGIN_SRC haskell
 module adder_1bit (x, y, z, s, c) ;
   
   input x, y, z;
@@ -122,9 +122,9 @@ end
 ** Literals
 <sre>`<base><value>
 ie. 
-8`b00011100
-8`h1c
-8`d28
+8`b00011100\\
+8`h1c\\
+8`d28\\
 
 all the above are equivalent
 
