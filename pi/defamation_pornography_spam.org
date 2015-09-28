@@ -1,0 +1,74 @@
+#+TITLE: Pornography, Defamation, Spam
+#+AUTHOR: Hamish Hutchings
+
+* Notes
+these can include some of the following:
+- owning information
+- misleading information
+- stolen information
+- illegal information
+- private information
+...
+
+* Publishing Laws
+Almost all countries have has laws on what can(not) be published.
+
+eg. you _can_ say bad things about people/companies, yet there are laws that limit what is good/bad.
+
+- Typically, such laws address ~Defamation~
+  
+- Pornography
+  - ie. material with sexual content.
+
+  The law tries to regulate ~ownership~ and ~flow~ of information.
+
+* Who is responsible for the bad information
+- ISP's?
+  - mere conduits
+    allows for scaling, (otherwise there would be too much overhead)
+  - caching
+    allowed, provided the content is not known to be illegal.
+  - hosting
+    possible ~DCMA~ takedown requests.
+  
+* Criminal Law
+There are many things that are legal in some countries, but not in others.
+
+is it possible to try someone in a country that they are not currently residing in?
+will the country in which the person is residing recognise a foreign country's trial results.
+
+- extradition
+- extra-territorial jurisdiction
+
+* International Convention on Cyber-Crime
+** Criminal Law
+- Child Pornography
+- Criminal Copyright Infringement
+- Computer-related fraud or hacking
+- incitement to religious or racial hatred
+** Civil Law
+This can be an easier to enforce (from the side of the owners of the intellectual property), as when signing, 
+you agree to the jurisdiction that you will be under.
+
+* Defamation
+defences for Defamation Act 1996
+- not author, oditor or publisher
+- if you reasonably believe that the comment is of interest of the public interest.
+- An honest person could have held the basis of any fact which existed at the time the statement complained of was published.
+
+* Pornography
+- 1978 -> possession of material ~involving children~
+- 2008 -> ~possession~ of 'extreme pornography'
+
+Deleting Images.
+in normal circumstances, deleting images held on a computer it is sufficient to delete them.
+An exception is if one _intends_ to retain control of it. (ie. through data-recovery tools)
+** Extreme Pornography (Criminal Justice)
+If it is not realistic or explicit is a legal defense
+
+- threatens or takes a persons life
+- sexual activity between a person & an animal (or a carcass of an animal)
+
+* Spam
+Unsolicited email can only be sent to individuals if they have previously given consent.
+

@@ -1,5 +1,6 @@
 #+TITLE: Computer Design
 
+* Introduction
 2^4 Boolean Input functions for a 2-input boolean function
 
 2^(2^n) functions for N-input boolean function

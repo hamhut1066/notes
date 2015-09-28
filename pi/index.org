@@ -26,8 +26,7 @@ Financial Accounting <
 ** Rights and Obligations of an employer and employee <
 ** Data Protection, Privacy, Software Contracts
 Intellectual Property, Copyright etc...
-** Defamation, Pornography, Spam, Privacy, Surveillance
-all the things
+** [[./defamation_pornography_spam.org][Defamation, Pornography, Spam]], Privacy, Surveillance
 ** Computer Misuse and Fraud
 illegal use of computers. <
 ** Ethics, Competition and Monopoly
@@ -38,4 +37,4 @@ Change policy at government level.
 e.g. social media policies
   - who can/can't post
   - what content is frowned upon/encouraged
-- Improve access to talent...
+  - Improve access to talent...
