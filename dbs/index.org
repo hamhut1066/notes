@@ -1,6 +1,6 @@
-#+TITLE: This is the title
+#+TITLE: Title for all things
 #+AUTHOR: Hamish Hutchings
 #+DATE: Thursday 24 September 2015
 
-* Create a repository for org mode.
-DEADLINE: <2015-09-24 Thu>
+* DONE Create a repository for org mode.
+CLOSED: [2015-09-28 Mon 14:04] DEADLINE: <2015-09-24 Thu>

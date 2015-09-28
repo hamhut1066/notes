@@ -1,0 +1,27 @@
+* Elements of Programming Languages
+
+* Concrete vs. Abstract Syntax
+** Concrete
+CFG examples
+E -> E PLUS F | F
+F -> F TIMES F | NUM | LPAREN E RPAREN
+
+needs to handle precendence, parens etc...
+*** specified using Context-Free grammars
+*** used for compiler/interpreter
+** Abstract Syntax
+BNF format
+Expr |E e ::= e1 + e2 | e1 x e2 | n e N
+*** Backus Naur Form (BNF)
+*** used to describe the ~abstract syntax~
+
+* Induction
+** Mathematical Induction
+if we have a property P over Natural no's
+if P(0) is true
+assume P(n) is true
+prove for n + 1
+
+This can also be used for Abstract Syntax Trees
+** Structural
+** Rule

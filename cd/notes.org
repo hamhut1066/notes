@@ -47,8 +47,8 @@ solution for (m1 + m2)
 |    | y0 | y1 |
 | x0 | 0  | 1  |
 | x1 | 1  | 1  |
-** Prime Implicant
-*** Product term obtained by combining the maximum possible number of adjacent squares.
+- Prime Implicant
+  - Product term obtained by combining the maximum possible number of adjacent squares.
 * NAND and NOR gates
  - both are extremely efficient
  - Are used to create other gates

@@ -1,7 +1,8 @@
 Introduction to Applied Machine Learning
 
 * Recap on Probability
-** Random Variables
-** Joint Distributions
-** Conditional Probability Distributions
-** Yay for Continuous Random Variables
+These are a couple of things that will need to be known to do this course
+- Random Variables
+- Distributions
+- Probability Distributions
+- for Continuous Random Variables
