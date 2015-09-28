@@ -1,4 +1,4 @@
-Introduction to Applied Machine Learning
+#+TITLE: Introduction to Applied Machine Learning
 
 * Recap on Probability
 These are a couple of things that will need to be known to do this course

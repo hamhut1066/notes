@@ -1,6 +1,5 @@
-#+TITLE: Title for all things
+#+TITLE: Database Systems
 #+AUTHOR: Hamish Hutchings
 #+DATE: Thursday 24 September 2015
 
-* DONE Create a repository for org mode.
-CLOSED: [2015-09-28 Mon 14:04] DEADLINE: <2015-09-24 Thu>
+This course is focusing initially on [[https://en.wikipedia.org/wiki/Relational_algebra][Relational Algebra]] and how it maps to ~SQL~.

@@ -1,24 +1,25 @@
-Professional Issues
+#+TITLE: Professional Issues
 #+LECTURER: Michael Fourman
 #+LECTURER: Phil Wadler
 
 * Communication is KEY
+This is the main form of resolution and the best way to maintain a healthy work environment.
 * Setting the Agenda (Chapter Headings)
 ** Laws surrounding Computers
 There are many issues and responsibilities that we must abide.
 Some of these are right/wrong, and we must actually look at whether or not we want (to defend) them?
 
-SOPA legistlaction
+SOPA legislation
 user freedom of information (i.e piratebay.com)
-*** more info: http://www.bcs.org/upload/pdf/dippispsyll.pdf
+- more info: [[http://www.bcs.org/upload/pdf/dippispsyll.pdf][Diploma in IT Syllabus]]
 ** Chartered Institution for IT
 create a _guild_ of computer programmers
 audits levels of education
-** Companies and Organisations
-what is an organisation?
-Formal obligations should be formalised
-*** employment terms
-*** what protection do I have from companies liability
+** Companies and Organizations
+what is an organization?
+Formal obligations should be formalized
+- employment terms
+- what protection do I have from companies liability
 ** Finance Accounting and Investment (Guest Speaker?)
 Financing a Start-up Company
 Financial Accounting <
@@ -30,11 +31,11 @@ all the things
 ** Computer Misuse and Fraud
 illegal use of computers. <
 ** Ethics, Competition and Monopoly
-*** Vendor lock-in
+- Vendor lock-in
 
 ** Policy
-Change policy at govmnt level.
-eg. social media policies
-**** who can/can't post
-**** what content is frowned upon/encouraged
-*** Improve access to talent...
+Change policy at government level.
+e.g. social media policies
+  - who can/can't post
+  - what content is frowned upon/encouraged
+- Improve access to talent...

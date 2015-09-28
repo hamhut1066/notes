@@ -3,17 +3,23 @@
 * Concrete vs. Abstract Syntax
 ** Concrete
 CFG examples
+
+#+BEGIN_SRC haskell
 E -> E PLUS F | F
 F -> F TIMES F | NUM | LPAREN E RPAREN
+#+END_SRC
 
 needs to handle precendence, parens etc...
-*** specified using Context-Free grammars
-*** used for compiler/interpreter
+- specified using Context-Free grammars
+- used for compiler/interpreter
 ** Abstract Syntax
 BNF format
+
+#+BEGIN_SRC haskell
 Expr |E e ::= e1 + e2 | e1 x e2 | n e N
-*** Backus Naur Form (BNF)
-*** used to describe the ~abstract syntax~
+- Backus Naur Form (BNF)
+- used to describe the ~abstract syntax~
+#+END_SRC
 
 * Induction
 ** Mathematical Induction

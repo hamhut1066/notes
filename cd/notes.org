@@ -1,4 +1,4 @@
-* Computer Design
+#+TITLE: Computer Design
 
 2^4 Boolean Input functions for a 2-input boolean function
 
@@ -14,33 +14,33 @@ f = (((a.b) + (~a.~b)).x) + (((a.~b) + (~a.b)).y)
 the above two function definitions are equivalent.
 
 * Implementation Goals
-** Minimize DELAY, AREA and ENERGY
-** Minimize no of gates
-** Minimize no of gate inputs (fan-in)
-** Minimize no of gates attachet to each output (fan-out)
-** Minimum propogation delay
-** Minimum chip area
-** Minimum Power Con
+- Minimize DELAY, AREA and ENERGY
+- Minimize no of gates
+- Minimize no of gate inputs (fan-in)
+- Minimize no of gates attachet to each output (fan-out)
+- Minimum propogation delay
+- Minimum chip area
+- Minimum Power Con
 
 
 * Simplification of Boolean Algebra
-** Apply Algebraic simplifications
-** generate:
-*** Sum of Products
-*** Product of Sums
+- Apply Algebraic simplifications
+- generate:
+  - Sum of Products
+  - Product of Sums
 
 * Use logic laws to simplify boolean expressions
-** Deductive Simplification
-*** fine for easy examples
-*** can become complex for larger expressions
+- Deductive Simplification
+  - fine for easy examples
+  - can become complex for larger expressions
 
 
 * Karnaugh Maps
 ** TODO Look at map variables (Computer Design)
-*** do some examples
+- do some examples
 ** Diagram of squares
 
-*** each square represents a minterm
+- each square represents a minterm
 
 
 solution for (m1 + m2)
@@ -120,11 +120,14 @@ end
 ** Preprocessor (Global Variables)
 =`define MYTHING 31:16=
 ** Literals
+
+#+BEGIN_SRC haskell
 <sre>`<base><value>
 ie. 
-8`b00011100\\
-8`h1c\\
-8`d28\\
+8`b00011100
+8`h1c
+8`d28
+#+END_SRC
 
 all the above are equivalent
 
