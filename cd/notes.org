@@ -1,5 +1,4 @@
-Lecture 2
-----
+* Computer Design
 
 2^4 Boolean Input functions for a 2-input boolean function
 
@@ -54,3 +53,81 @@ solution for (m1 + m2)
 ** both are extremely efficient
 ** Are used to create other gates
 ** NAND gates are generic. (as with NOR)
+* Hardware Design Language (HDL)
+eg. Verilog
+
+example of 3 bit adder
+
+#+BEGIN_SRC ruby
+module adder_1bit (x, y, z, s, c) ;
+  
+  input x, y, z;
+  output s, c;
+
+  assign {c, s} = x + y + z;
+endmodule
+#+END_SRC
+
+A TestBench is used to control and test the module design (of hardware)
+
+** Types of coding strategies
+Code that we want to be mapped to hardward needs to be ~synthesizable~ (Design)
+
+We can write in a ~behavioural~ form in the Test-Bench (Test-Bench)
+
+** Values
+Fundamental 1-bit value
+
+Verilog allows for 4 values (0, 1, x (undefined), z (not driven))
+
+not driven means that there is no input (ie. the cable is not connected)
+
+** Nets
+these are essentially cables
+
+~wire~: verilog type.
+
+Nets don't store information, they assist in propogation
+
+** Registers
+values are stored here
+
+~reg~ can keep a value that is assigned to it. (1-bit storage element)
+useful for flip-flops & memories
+** Operators
+create expressions
+can be assigned to nets or expressions
+** Vectors
+often need to work with voctors of wires or regs
+
+notation =[upper:lower]= to describe vector
+recommend upper >= lower
+
+verilog _will_ fill in missing vector elements with =0= up to the upper end!
+
+we can concatenate _Vectors_ to
+
+#+BEGIN_SRC haskell
+reg [21:0] data
+reg [31:16] upper_half
+
+always @(data)
+begin
+  lower_half = data[15:0]
+  upper_half = data[31:16]
+end
+#+END_SRC
+** Preprocessor (Global Variables)
+=`define MYTHING 31:16=
+** Literals
+<sre>`<base><value>
+ie. 
+8`b00011100
+8`h1c
+8`d28
+
+all the above are equivalent
+
+** Arrays
+allows indexing into memory
+No arrays of real types
