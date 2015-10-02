@@ -1,5 +1,87 @@
 #+TITLE: Guest Lectures
 #+AUTHOR: Hamish Hutchings
+#+DATE: \today
+#+LATEX_CLASS: article
+#+DESCRIPTION: Notes on guest lectures
+
 
 * Sharing Autonomy (& Responsibility)
-# The Robots are ready, are you?
+The Robots are ready, are you?
+
+Speaker: Professor ~Sethu Vijayakumar~
+
+Types of operation:
+- Teleoperation
+  - operation by mimicking movements.
+- Autonomy
+  - Planning
+  - Reasoning
+  - etc...
+- Shared Autonomy
+  - Most volition comes from _us_
+  - allows for more automation, with control still with us.
+  - 
+
+** Challenges with robotics
+1. Close _Interaction_ with _multiple objects_
+2. multiple _contacts_
+3. hard to model _non-linear dynamics_
+4. guarantee _safe operations_
+5. _constrained_ env.
+6. signif. _autonomy_
+7. noisy _sensing_ with occlusions.
+   
+** Technological Challenges and Solutions
+** Societal Impact and Implications
+
+** Bridging Issues
+- Robustness
+- Adaptability
+- Safety
+- Autonomy (level)
+- Security
+- Ethics
+- Jobs
+
+** Tracking (Sense)
+~Tracking and Localisation~
+tracking of objects is challenging.
+challenges with depth of field.
+
+building a context of the world it is involved in by integrating all information from all the sensors.
+A degree of robustness is needed.
+
+** Representation of the environment
+
+** Actuation Design
+- passive compliant mechanism to deal with ~unexpected disturbances~
+- exploit natural dynamics by modulating ~variable impedance~
+
+this has the benefits of Efficiency, Safety and Robustness
+
+_crucial_ for ~safe~, yet ~precise~ human/robot interactions and ~wearable exoskeletons~.
+
+** MultiScale Planning
+~multiple abstractions~
+Bayesian Inference
+** Adaption
+fast dynamics online learning for adaption
+
+Fast planning methods
+
+Efficient any scale (embedded, cloud, tethered)
+** Sharing Autonomy
+Google self-driving car.
+robotic bed, helping feed and care for needs.
+** Security
+Hacking needs to be a major concern.
+
+self-driving cards hacked using a laser pointer, messing up the sensing system.
+
+potential questions:
+- who is responsible when something goes wrong?
+** Morality, Ethics
+principles concerning distinction between right and wrong.
+
+which societal right/wrong do we program for?
+extent to which an action is right/wrong.
