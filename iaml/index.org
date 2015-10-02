@@ -6,3 +6,86 @@ These are a couple of things that will need to be known to do this course
 - Distributions
 - Probability Distributions
 - for Continuous Random Variables
+
+* Learning
+** Supervised
+- Trying to predict a specific quantity
+- have traning examples with labels
+- can measure accuracy directly
+This is the technique of trying to predict values which can later be measured (more easily).
+
+** Unsupervised
+- try to ~understand~ the data
+- looking for structure or unusual patterns
+- not looking for something specific (supervised)
+- does not require labeled data
+- evaluation usually indirect or qualitative
+
+** Semi-Supervised
+- using unsupervised methods to improve supervised algs.
+- usually few examples + lots of unlabeled
+
+* Multi-class vs. Binary classification
+** Multi-classification
+- classes mutually exclusive
+  - instance is either a, b or c
+  - even if it's an outlier
+- NB, kNN, DT, logistic
+** Binary
+- one-vs-rest
+  - {a} vs {not a}, {b} vs {not b}
+- classes _may_ overlap
+  - instance can be both a and b
+  - can be in none of the classes
+- SVM, logistic, perceptron
+
+* Classification accuracy and imbalanced classes
+Example is a prediction for a _scientific publication_ receiving a _Nobel Prize_.
+This can be built with ~99.99%~ accuracy, (ie. always say no)
+
+** what is the apprapriate error metric
+- relative cost of false positives/negatives
+- medical diagnosis vs. investment opportunities
+
+Accuracy / error rate can be a poor metric
+
+* Generative vs. Discriminative
+** Generative
+- probabilistic ~model~ of each class.
+- descision boundary
+  - where one model becomes more likely
+- natural use of unlabeled date
+** Discriminative
+can be more powerful with more training data.
+- focus on decision boundary
+- more powerful with lots of examples
+- not designed to use unlabeled daa
+- only supervised tasks
+
+* Structure
+** Input
+sometimes structure can be important.
+Structure can be hard to embed in attributes.
+
+one possible representation is root-to-leaf paths!
+
+** Output
+searching over possible outputs becomes main focus
+
+one solution is to pass in a ~potential~ output tree, and see what the _binary_ result would be.
+if =true=, then we return/output the hypothetical output tree, as we know it to be the correct tree.
+
+
+* Outliers in Data
+outliers are instances of a class that are unlike any other instance of that class.
+(affect all learning methods to certain degrees)
+
+- Extreme Attribute values
+  - detect: confidence interval
+  - remove or threshold
+- Disimilar to other insntances
+  - remove or try to fix (mis-labeled?)
+- Always try to visualize the data
+  - helps detect many irregularities!
+
+
