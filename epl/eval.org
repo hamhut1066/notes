@@ -1,0 +1,34 @@
+#+TITLE: Evaluation
+#+AUTHOR: Hamish Hutchings
+
+* Notes
+What is evaluation?
+
+* Values
+values are the terminal nodes in an AST.
+
+given an expression e, whit is its value?
+- if =e = n=, a number, then return the value.
+- if =e = e1 + e2=, eval =e1 -> v1 & e2 -> v2= and add them.
+- same for multiply
+ 
+** Formal Evaluation of Syntax Trees
+using the syntax =E -> V=. This means that the expression =E= evaluates to the value =V=
+
+any value =V=, when evaluated, is itself evaluated
+
+| e1 -> v1 | e2 -> v2 |
+| e1 + e2 ⇓ v1 + v2 |
+
+* Uniqueness
+we can prove the uniqueness of the value of ~v~ by induction.
+
+#+BEGIN_SRC haskell
+if e -> v & e -> v' then v = v' 
+#+END_SRC
+proof can be done through induction.
+
+| =e1 -> v1 . e2 -> v2= | =e1 -> v1' . e2 -> v2'.= |
+| =e1 + e2 -> v1 + v2= | =e1 + e2 -> v1' + v2'.= |
+
+by induction, =e1 -> v1= and =e1 -> v1'.=. similarly for =e2=.

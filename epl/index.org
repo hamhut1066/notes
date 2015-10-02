@@ -31,3 +31,6 @@ prove for n + 1
 This can also be used for Abstract Syntax Trees
 ** Structural
 ** Rule
+
+* Evaluation
+[[file:eval.org][Link to eval notes]]
