@@ -34,3 +34,16 @@ This can also be used for Abstract Syntax Trees
 
 * Evaluation
 [[file:eval.org][Link to eval notes]]
+* Booleans and Conditionals
+This is extending the simple arithmetic language we defined before, (with ~==~ and =if e then e1 else e2=)
+This ist he first language making non-trivial choices!
+* Static vs. Dynamic typing
+These are rarely-realised extremes. most ~statically~ typed languages handle some errors dynamically
+
+In contrast, any ~dynamically~ typed language can be thought of as a statically typed one with just _one_ type.
+** Static Typing
+- not all expressions are well-formed; some sensible programs are not allowed.
+- types can be used to catch errors, improve performance
+** Dynamic Typing
+- all expressions are well-formed; any program can be run
+- type errors arise dynamically; higher overhead for tagging and checking
