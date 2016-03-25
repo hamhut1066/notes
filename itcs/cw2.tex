@@ -1,0 +1,288 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{mathpartir}
+
+
+
+\lstdefinelanguage{Lambda}{%
+  morekeywords={%
+    if,then,else,fix,letrec,in % keywords go here
+  },%
+  morekeywords={[2]nat,bool},   % types go here
+  otherkeywords={:}, % operators go here
+  literate={% replace strings with symbols
+    {~>}{{$\rightarrow^\beta$}}{2}
+    {->}{{$\to$}}{2}
+    {lambda}{{$\lambda$}}{1}
+  },
+  basicstyle={\sffamily},
+  keywordstyle={\bfseries},
+  keywordstyle={[2]\itshape}, % style for types
+  keepspaces,
+  mathescape % optional
+}[keywords,comments,strings]%
+
+
+\title{ITCS Coursework 2}
+\author{Hamish Hutchings  \\
+  s1249759
+  }
+
+\date{\today}
+% Hint: \title{what ever}, \author{who care} and \date{when ever} could stand
+% before or after the \begin{document} command
+% BUT the \maketitle command MUST come AFTER the \begin{document} command!
+\begin{document}
+
+\maketitle
+
+
+\section*{Question 1}
+
+\subsection*{a}
+\label{subsec:a}
+
+We already know that \textit{3-SAT} is in \textit{NP}. \textit{Exact 3-SAT} is a
+special case of \textit{3-SAT}, such that \textit{Exact 3-SAT} \subset \textit{3-SAT}.
+
+\paragraph{case 1}
+let $\phi$ be an instance of \textit{3-SAT}. If every clause has three literals,
+then $\phi$ is an instance of \textit{Exact 3-SAT}.
+
+\paragraph{case 2}
+ Construct $\phi'$ from
+$\phi$, replacing all clauses with less than three literals with a clause that
+repeats literals within itself (i.e. $A \vee B \rightarrow A \vee B \vee B$).
+
+As we already know that \textit{3-SAT} is in \textit{NP}, we can say that
+\textit{Exact 3-SAT} is in \textit{NP} as \textit{Exact 3-SAT} $\subset$ \textit{3-SAT}.
+
+\subsection*{b}
+\label{subsec:b}
+only considering $x_i$ to be in $\{0,1\}$, we can define a routine $f(a, x)$
+which returns true if $a$ and $x$ are the same, and false otherwise.
+
+Examining a single \textit{3-product}
+\[
+  (a_1 - x_i)(a_2-x_j)(a_3-x_k)
+\]
+we can see that in order to satisfy the requirement of the evaluation of this
+product to equal 0, either $(a_1 - x_i)$ or $(a_2 - x_j)$ or $(a_3 - x_k)$ must
+equal 0.
+For any of these sub-clauses to equal 0, the variables within must be equal. We
+can now rewrite a sub-clause using the above defined function, which gives us an
+\textit{Exact 3-SAT} problem as defined in the previous question.
+
+\[
+  f(a_1, x_i) \vee f(a_2, x_j) \vee f(a_3, x_k)
+\]
+
+expanding the above logical statement into a finite no. of \textit{3-product}'s,
+we can again substitute each product form using the above technique.
+
+\[
+  [f(a_1, x_i) \vee f(a_2, x_j) \vee f(a_3, x_k)] \wedge \ldots  \wedge [f(a_n-2, x_a) \vee f(a_n-1, x_b) \vee f(a_n, x_c)]
+\]
+
+We can conclude that \textit{3PRODEQNS} problem is at least as hard as the
+\textit{Exact 3-SAT} problem, and is therefore in \textit{NP}
+
+\subsection*{c}
+\label{subsec:c}
+
+We can use \textit{CLIQUE} to solve \textit{INDSET}.
+
+let $G(V,E)$ be a graph, and $k > 0$ be an instance of k-clique in $G$.
+We can construct $G'(V',E'),k'$ where
+\[
+  V' = V \\
+  E' = \{ \{u, v\} | u, v \in V, u \neq v and \{u,v\} \not \in E \} \\
+  k' = k \\
+\]
+
+with $G'$, we can now solve for $k'$-clique. This will give us \textit{INDSET}
+for $k$ in $G$. As \textit{CLIQUE} is \textit{NP}-complete, \textit{INDSET} is
+also \textit{NP}-complete.
+
+\paragraph{}
+Above, we have defined a graph $G$, which we know has the a k-clique.
+We then define a second graph $G'$ in terms of $G$, but with inverse edges.
+This gives the second graph the satisfying property of all non-adjacent vertices
+becoming adjacent. We already know how to solve for a sub-graph of k vertices
+existing in a given graph (\textit{CLIQUE}). We further recognise that
+\textit{INDSET} is a set of vertices in the inverse graph $G'$ that are adjacent
+to each other. We can then show that in order to solve \textit{INDSET} we must
+solve \textit{CLIQUE} which we already know to be \textit{NP}-complete.
+
+\pagebreak[4]
+\section*{Question 2}
+
+\subsection*{a}
+Evaluating the form described comes as such.
+\begin{lstlisting}[language=Lambda] \\ \\
+  (lambda m.lambda n.lambda f.lambda x.mf(nfx))(lambda f.lambda x.fx)(lambda f.lambda x.f(fx))
+  ~> t[(lambda f.lambda x.fx)/m]
+
+  (lambda n.lambda g.lambda y.(lambda f.lambda x.fx)g(ngy))(lambda f.lambda x.f(fx))
+  ~> t[(lambda f.lambda x.f(fx))/n]
+
+  (lambda g.lambda y.(lambda h.lambda z.hz)g((lambda f.lambda x.f(fx))gy))
+\end{lstlisting}
+
+This suggests that the lambda expression is evaluated by 'Call by name', This
+allows for passing in expressions that would otherwise infinitely recurse, as
+they are only evaluated when they are called. \\
+
+This would mean that 'Call by value' would need another way to approach the
+problem. As we cannot pass in an expression that may loop infinitely, we need to
+express the problem in such a way that we can delay the evaluation of a value
+until a later time, (I believe this is where Thunk's come in handy).
+
+\subsection*{b}
+\paragraph{Show that $Y'G = G(YG)$.}
+\begin{lstlisting}[language=Lambda]
+  YG = (lambda X.G(XX))(lambda X.G(XX))
+
+  Y'G = (lambda F.(lambda X.XX)(lambda X.F(XX)))G
+
+  ~>  (lambda X.XX)(lambda X.G(XX))
+
+  ~>  (lambda X.G(XX))(lambda X.G(XX))
+
+  ~>  G((lambda X.G(XX))(lambda X.G(XX)))
+
+  = G(YG)
+\end{lstlisting}
+
+\paragraph{Show that $Y'$ reduces to $Y$ by an internal $\beta$-reduction.}
+\begin{lstlisting}[language=Lambda]
+  Y' = (lambda F.(lambda X.XX)(lambda X.F(XX)))
+
+  ~>  (lambda F.(lambda X.F(XX))(lambda X.F(XX)))
+
+  = Y
+\end{lstlisting}
+
+\subsection*{c}
+Give a formal derivation for the type of the simple typed expression:
+\begin{lstlisting}[language=Lambda]
+  lambda f:nat -> nat.lambda x:nat. f(fx)
+\end{lstlisting}
+
+\paragraph{}
+\[
+  \inferrule{\inferrule{\inferrule{x:nat \vdash x: nat}
+      {x:nat,f:nat \to nat \vdash fx: nat}}
+    {x:nat, f: nat \to nat \vdash f(fx): nat}}
+  {\lambda f:nat \to nat.\lambda x:nat. f(fx): (nat \to nat) \to nat \to nat}
+\]
+
+\linebreak
+\subsection*{d}
+\[
+  \inferrule[FirstF]
+  {\Gamma \vdash f: \pi \to \phi \\ \Gamma \vdash x: \pi}
+  {\lambda f.\lambda x. fx: (\pi \to \phi) \to \pi \to \phi}
+
+  \inferrule[SecondF]
+  {\Gamma \vdash f: \alpha \to \beta \\ \inferrule
+    {\Gamma, f: \alpha \to \beta \vdash f: \alpha \to \beta
+    \\ \Gamma \vdash x: \alpha}
+    {\Gamma \vdash fx: \beta}}
+  {\lambda f.\lambda x. fx: (\alpha \to \beta) \to \alpha \to \beta}
+\]
+
+Above are the derivations for the two functions that are applied. I have done it
+like this to make it slightly easier to read the final derivation.
+
+\[
+  \inferrule*
+  {\Gamma \vdash m: (\pi \to \phi) \to \pi \to \phi
+    \\ \Gamma \vdash f: \pi \to \phi
+    \\ \inferrule*
+    {\Gamma \vdash n: (\alpha \to \beta) \to \alpha \to \beta
+      \\ \inferrule*
+      {\Gamma \vdash f: \pi \to \phi \\ \Gamma \vdash x: \pi}
+      {\Gamma \vdash fx: (\alpha \to \beta) \to \alpha}}
+    {\Gamma \vdash nfx: \pi}}
+  {\Gamma \vdash (\lambda m. \lambda n. \lambda t.\lambda x.mf(nfx))
+    ((\pi \to \phi) \to \pi \to \phi)
+    ((\alpha \to \beta) \to \alpha \to \beta)}
+\]
+
+We see from this that $\alpha = \pi$ and $\beta = \phi$, giving us the final
+type:
+
+\[
+  (\lambda m: (\alpha \to \beta) \to \alpha \to \beta.\
+  \lambda n: (\alpha \to \beta) \to \alpha \to \beta.
+  \lambda f: \alpha \to \beta. \lamda x: \alpha . mf(nfx)))
+\]
+\[
+  (\lambda f: \alpha \to \beta. \lambda x: \alpha. fx)
+  (\lambda f: \alpha \to \beta. \lambda x: \alpha. f(fx))
+\]
+
+\pagebreak[4]
+\section*{Question 3}
+
+\subsection*{a}
+\begin{lstlisting}[language=Lambda]
+  letrec evenp = (lambda x.(if (zerop x)
+    true
+    ((lambda y. (if (evenp y) false (evenp (pred y))))(pred x))))
+  in evenp(1)
+\end{lstlisting}
+\subsection*{b}
+\begin{lstlisting}[language=Lambda]
+  (lambda x.(if (zerop x)
+    true
+    ((lambda y. (if (evenp y) false (evenp (pred y))))(pred x))))1
+
+  ~> (if (zerop 1)
+      true
+      ((lambda y. (if (evenp y) false (evenp (pred y))))(pred 1)))
+\end{lstlisting}
+\subsection*{c}
+\[
+  \begin{align}
+  True: (\lambda t.\lambda f. t): \forall\alpha.\forall\beta.\alpha \to \beta \to
+  \alpha \\
+  False: (\lambda t.\lambda f. f): \forall\alpha.\forall\beta.\alpha \to \beta \to \beta
+  \end{align}
+\]
+\subsection*{d}
+\[
+  \inferrule*
+  {\inferrule*
+    {\inferrule*
+      {\inferrule*
+        {\inferrule*
+          {\Gamma, f: \alpha \to \beta \vdash x: \alpha}
+          {\Gamma, f: \alpha \to \beta \vdash f
+            \\ \Gamma, f: \alpha \to \beta \vdash fx}}
+        {\Gamma, f: \alpha \to \beta \vdash f(fx): \beta}}
+      {\Gamma, f:\alpha \to \beta \vdash (\lambda x. f(fx)): \alpha \to \beta}}
+    {\Gamma \vdash (\lambda f.\lambda x.f(fx)): \forall \alpha.\forall \beta.(\alpha \to
+      \beta) \to \alpha \to \beta
+      \\ \Gamma \vdash succ: nat \to nat
+      \\ \Gamma \vdash 3: nat}}
+  {(\lambda f.\lambda x.f(fx))(suc)(3)}
+\]
+
+Above is a rough derivation of types.
+The final formula is described below:
+
+\[
+  (\lambda f:(\forall\alpha.\forall\beta.\alpha \to \beta)
+  .\lambda x:\forall\alpha. \alpha. f(fx))(suc: nat \to nat)(3:nat)
+\]
+
+The variables are unified when the function \textit{succ} is passed into the
+lambda function. the abstract types $\alpha$ and $\beta$ are specialised to the
+\textit{nat} type.
+
+
+
+\end{document}
